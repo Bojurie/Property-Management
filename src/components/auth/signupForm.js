@@ -8,15 +8,14 @@ import TextLink from "../textLink";
 class SignupForm extends Component {
   render() {
 
-    const {handleSubmit} = this.props;
+    const { handleSubmit } = this.props;
 
     return (
       <form onSubmit={handleSubmit} className="sign-up-form">
-        <FormTitle className="sign-in-form__title" text="New User" />
-
+        <FormTitle className="sign-up-form__title" text="New User" />
         <Field
           className="sign-up-form__fullname"
-          placeholder="Enter Full Name"
+          placeholder="Enter Your Full Name"
           name="fullname"
           type="text"
           title="Full Name"
@@ -24,10 +23,10 @@ class SignupForm extends Component {
         />
         <Field
           className="sign-up-form__unit"
-          placeholder="Enter unit #"
+          placeholder="Enter Unit #"
           name="unit"
           type="text"
-          title="unit #"
+          title="Unit #"
           component={FormInput}
         />
         <Field
@@ -48,19 +47,20 @@ class SignupForm extends Component {
         />
         <Field
           className="sign-up-form__create-account"
-          name="createccount"
+          name="createaccount"
           type="submit"
           title="Create Account"
           component={FormButton}
         />
         <div className='sign-up-form__text-links'>
-            <TextLink to='/signup' text='Already Registered? Login'/>
+            <TextLink to='/signin' text='Already Registered? Login'/>
         </div>
         
       </form>
     );
   }
 }
+
 SignupForm = reduxForm({
   form: "signup"
 })(SignupForm);
