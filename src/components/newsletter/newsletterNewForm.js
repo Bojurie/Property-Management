@@ -7,12 +7,14 @@ import TextLink from "../textLink";
 
 class NewNewsletterForm extends Component {
   render() {
-
     const { handleSubmit } = this.props;
 
     return (
       <form onSubmit={handleSubmit} className="new-newsletter-form">
-        <FormTitle className="new-newsletter-form__title" text="New Newsletter" />
+        <FormTitle
+          className="new-newsletter-form__title"
+          text="New Newsletter"
+        />
         <Field
           className="new-newsletter-form__newsletter-title"
           placeholder="Newsletter Title"
@@ -20,7 +22,7 @@ class NewNewsletterForm extends Component {
           type="text"
           title="Newsletter Title"
           component={FormInput}
-        />  
+        />
         <Field
           className="new-newsletter-form__body"
           placeholder="Newsletter Body"
@@ -30,15 +32,23 @@ class NewNewsletterForm extends Component {
           component={FormTextArea}
         />
         <Field
-          className="sign-in-form__submit"
+          className="new-newsletter-form__submit"
           small={true}
           danger={true}
           name="submit"
           type="submit"
           title="Submit"
           component={FormButton}
-        />  
-        
+        />
+        <Field
+          className="new-newsletter-form__cancel"
+          small={true}
+          name="cancel"
+          type="button"
+          title="Cancel"
+          component={FormButton}
+          onClick={this.props.onCancel}
+        />
       </form>
     );
   }
