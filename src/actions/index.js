@@ -1,9 +1,5 @@
-import {
-    signUp,
-    signIn
-} from './auth';
+import { signUp, signIn } from "./auth";
 
-export {
-    signUp,
-    signIn
-};
+import { fetchNewsletters } from "./newsletter";
+
+export { signUp, signIn, fetchNewsletters };
