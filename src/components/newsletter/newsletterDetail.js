@@ -7,6 +7,7 @@ import NewsletterBox from "./newsletterBox";
 import NewsletterLatest from "../newsletterLatest";
 
 import { FormTitle } from "../formTitle";
+import { FormButton } from "../formFields";
 
 class NewsletterDetail extends Component {
   componentDidMount() {
@@ -19,10 +20,16 @@ class NewsletterDetail extends Component {
       <div className="newsletter-detail">
         <FormTitle
           className="newsletter-detail__title"
-          text="Newsletter detail"
+          text="Newsletter Archive"
         />
         <NewsletterBox date={this.props.newsletterToEdit.date} />
         <NewsletterLatest {...this.props.newsletterToEdit} />
+        <FormButton
+          className="newsletter-detail__cancel"
+          small={true}
+          onClick={() => this.props.history.push("/dashboard")}
+          title="Cancel"
+        />
       </div>
     );
   }
