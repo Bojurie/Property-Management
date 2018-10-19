@@ -1,8 +1,23 @@
 import React, { Component } from "react";
 
-class RequestGrid extends Component {
+import Button from "../button";
+
+class RequestsGrid extends Component {
+  handleAddRequest = () => {
+    this.props.history.push("/request/new");
+  };
+
   render() {
-    return <div className="requests-grid">Hi there</div>;
+    return (
+      <div className="requests-grid">
+        <Button
+          className="requests-grid__button"
+          icon="fas fa-plus"
+          callback={() => this.handleAddRequest()}
+        />
+      </div>
+    );
   }
 }
-export default RequestGrid;
+
+export default RequestsGrid;
