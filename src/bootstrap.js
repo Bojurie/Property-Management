@@ -44,7 +44,8 @@ function main() {
             <Route path="/signup" component={Signup} />
 
             {/* DASHBOARD */}
-            <Route path="/dashboard" component={requireAuth(Dashboard)} />
+            <Route path="/dashboard" component={Dashboard} />
+            {/* <Route path="/dashboard" component={requireAuth(Dashboard)} /> */}
 
             {/* NEWSLETTER */}
             <Route
