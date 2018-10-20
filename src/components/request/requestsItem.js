@@ -20,6 +20,7 @@ class RequestsItem extends Component {
           icon="fas fa-wrench"
           callback={() => console.log("tryna change request status")}
         />
+
         <div className="requests-item__description">
           <img
             className="requests-item__description-img"
