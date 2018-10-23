@@ -11,7 +11,7 @@ class NewRequest extends Component {
     //   // save new newsletter on the backend. perform a post request here.
     //   console.log('trying to submit to backend.');
     // }
-    this.props.creacteNewRequest(this.props._id, {}, () => {
+    this.props.createNewRequest(this.props._id, fields, () => {
       this.props.history.push("/dashboard");
     });
   };
@@ -36,6 +36,7 @@ class NewRequest extends Component {
     );
   }
 }
+
 function mapStateToProps(state) {
   const { _id } = state.auth.user;
   return { _id };
