@@ -49,7 +49,7 @@ export function fetchRequests() {
   };
 }
 
-export function changeStatus({ _id, status }) {
+export function changeStatus({ _id, status }, success) {
   const token = localStorage.getItem("token");
   return function() {
     axios
@@ -62,6 +62,7 @@ export function changeStatus({ _id, status }) {
       )
       .then(response => {
         console.log(response.data);
+        success();
       })
       .catch(err => {
         console.log(err);
