@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+import * as actions from "../../actions";
+
 import Icon from "../icon";
 import Button from "../button";
 
@@ -29,6 +32,7 @@ class RequestsItem extends Component {
 
   render() {
     const { _id, title, body, date, imageUrl, status } = this.props;
+
     const parsedDate = new Date(date);
     return (
       <div id="requests-item" className="requests-item">
@@ -52,7 +56,7 @@ class RequestsItem extends Component {
         <Button
           className="requests-item__move"
           icon="fas fa-wrench"
-          callback={() => console.log("tryna change request status")}
+          callback={() => this.props.changeStatus({ _id, status })}
         />
         <div className="requests-item__description">
           <AnimateHeight duration={300} height={this.state.height}>
@@ -69,5 +73,10 @@ class RequestsItem extends Component {
     );
   }
 }
+
+RequestsItem = connect(
+  null,
+  actions
+)(RequestsItem);
 
 export default RequestsItem;

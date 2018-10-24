@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import TabNav from "./tabnav";
 import NewsletterGrid from "./newsletter/newsletterGrid";
-import RequestsGrid from "./request/requestGrid";
+import RequestsGrid from "./requests/requestGrid";
 
 class Dashboard extends Component {
   constructor(props) {

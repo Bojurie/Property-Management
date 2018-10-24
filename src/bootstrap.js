@@ -31,7 +31,7 @@ import Dashboard from "./components/dashboard";
 import NewNewsletter from "./components/newsletter/newsletterNew";
 import EditNewsletter from "./components/newsletter/newsletterEdit";
 import NewsletterDetail from "./components/newsletter/newsletterDetail";
-import NewRequest from "./components/request/requestsNew";
+import NewRequest from "./components/requests/requestsNew";
 
 function main() {
   ReactDOM.render(

@@ -2,7 +2,12 @@ import { signUp, signIn } from "./auth";
 
 import { fetchNewsletters, fetchNewsletterWithId } from "./newsletter";
 
-import { changeSelectedRequestType, createNewRequest, fetchRequests } from "./requests";
+import {
+  changeSelectedRequestType,
+  createNewRequest,
+  fetchRequests,
+  changeStatus
+} from "./requests";
 
 export {
   signUp,
@@ -11,5 +16,6 @@ export {
   fetchNewsletterWithId,
   changeSelectedRequestType,
   createNewRequest,
-  fetchRequests
+  fetchRequests,
+  changeStatus
 };
