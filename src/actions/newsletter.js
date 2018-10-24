@@ -18,11 +18,32 @@ export function fetchNewsletters() {
         console.log(err);
       })
   }
+
 }
 
 export function fetchNewsletterWithId(id) {
   return {
     type: FETCH_NEWSLETTER_ID,
     payload: id
+  };
+}
+
+export function createNewNewsletter(userId, formData, success) {
+  const token = localStorage.getItem("token");
+  return function() {
+    axios
+      .post(`${ROOT_URL}/newsletters/new`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          authorization: token
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+        success();
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 }
