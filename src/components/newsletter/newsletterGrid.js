@@ -4,7 +4,7 @@ import * as actions from "../../actions";
 
 import NewsletterBox from "./newsletterBox";
 import NewsletterArchive from "./newsletterArchive";
-import NewsletterLatest from "../newsletterLatest";
+import NewsletterLatest from "./newsletterLatest";
 import Button from "../button";
 
 class NewsletterGrid extends Component {
