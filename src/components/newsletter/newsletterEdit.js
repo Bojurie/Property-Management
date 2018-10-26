@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actions from "../../actions";
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 import EditNewsletterForm from "./newsletterEditForm";
 
 class EditNewsletter extends Component {
+
   onSubmit = fields => {
 
     const { title, body, image } = fields;
@@ -12,14 +13,12 @@ class EditNewsletter extends Component {
     var formData = new FormData();
     formData.append('title', title);
     formData.append('body', body);
-    if(image != undefined) {
-      formData.append('image', image);
-    }
-    
-    this.props.createNewNewsletter(formData, () => {
+    formData.append('image', image);
+  
+    this.props.editNewsletter(this.props.match.params.id, formData, () => {
         this.props.history.push("/dashboard");
     })
-  
+
   };
 
   onCancel = () => {
@@ -27,7 +26,7 @@ class EditNewsletter extends Component {
   };
 
   componentDidMount() {
-    this.props.fetchNewsletterWithId(this.props.match.params.id);
+      this.props.fetchNewsletterWithId(this.props.match.params.id);
   }
 
   render() {
@@ -36,13 +35,14 @@ class EditNewsletter extends Component {
         <EditNewsletterForm
           onCancel={() => this.onCancel()}
           onSubmit={event => this.onSubmit(event)}
-          formTitle="Edit Newsletter"
-          fieldOneTitle="Newsletter Title"
-          fieldTwoTitle="Body"
+          formTitle='Edit Newsletter'
+          fieldOneTitle='Newsletter Title'
+          fieldTwoTitle='Body'
         />
       </div>
     );
   }
 }
 
-export default connect(null,actions)(EditNewsletter);
+
+export default connect(null, actions)(EditNewsletter);

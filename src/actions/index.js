@@ -1,13 +1,21 @@
-import { signUp, signIn } from "./auth";
+import {
+  signUp,
+  signIn
+} from './auth';
 
-import { fetchNewsletters, fetchNewsletterWithId, createNewNewsletter} from "./newsletter";
+import { 
+  fetchNewsletters,
+  fetchNewsletterWithId,
+  createNewNewsletter,
+  editNewsletter
+} from './newsletter';
 
 import {
   changeSelectedRequestType,
   createNewRequest,
   fetchRequests,
   changeStatus
-} from "./requests";
+} from './requests';
 
 export {
   signUp,
@@ -18,5 +26,6 @@ export {
   createNewRequest,
   fetchRequests,
   changeStatus,
-  createNewNewsletter
+  createNewNewsletter,
+  editNewsletter
 };
