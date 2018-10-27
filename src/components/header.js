@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Header({title, subtitle}) {
+export function Header({ title, subtitle }) {
     return (
         <div className='header'>
             <h1 className='header__title'>{title}</h1>
@@ -9,8 +9,10 @@ export function Header({title, subtitle}) {
     )
 }
 
-export function HeaderBar() {
-    return (
-        <div className='bar'></div>
-    )
+export function HeaderBar({hideBar}) {
+    if(hideBar) {
+        return <div></div>
+    } else {
+        return <div className='bar'></div>
+    }
 }
